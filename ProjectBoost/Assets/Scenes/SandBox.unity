@@ -356,23 +356,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1668905926 stripped
+--- !u!1 &1821202308 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8456213112239452679, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-  m_PrefabInstance: {fileID: 7347253120362712611}
+  m_CorrespondingSourceObject: {fileID: 4871479122634247981, guid: a8bf72b58f4ba574895c5d1e1b2ece66, type: 3}
+  m_PrefabInstance: {fileID: 650089542}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1668905933
+--- !u!82 &1821202309
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668905926}
+  m_GameObject: {fileID: 1821202308}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a89aea740cf350446b3bd33d339bd6f4, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a622f1b673fb22942bdce0d7c089487f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -457,6 +457,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1821202310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821202308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f158cc85c6011d54782e6841d0c4518b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2922626959182172367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -578,17 +590,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-      propertyPath: turningSpeed
-      value: 80
+    - target: {fileID: 1668905933, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: Loop
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1668905932, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-      propertyPath: m_Drag
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1668905932, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-      propertyPath: m_Constraints
-      value: 56
+    - target: {fileID: 1668905933, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2552817532174414419, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
       propertyPath: m_RootOrder
@@ -637,6 +645,10 @@ PrefabInstance:
     - target: {fileID: 8456213112239452679, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456213112239452679, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
