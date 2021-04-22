@@ -5,6 +5,7 @@ public class Landing : MonoBehaviour
 {
     AudioSource audio;
     int currentScene;
+    int nextScene;
 
     
     private void OnCollisionEnter(Collision other)
@@ -16,8 +17,19 @@ public class Landing : MonoBehaviour
 
         }
 
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentScene + 1);
+        LoadNextLevel();
 
+    }
+
+    void LoadNextLevel()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        nextScene = currentScene + 1;
+
+        if(SceneManager.sceneCountInBuildSettings == nextScene)
+        {
+            nextScene = 0;
+        }
+        SceneManager.LoadScene(nextScene);
     }
 }
