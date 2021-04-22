@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
         
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Press Space");
+            
             rb.AddRelativeForce(Vector3.up* mainThrust * Time.deltaTime);
 
             if (!audio.isPlaying)
