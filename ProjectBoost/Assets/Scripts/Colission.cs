@@ -1,8 +1,10 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Colission : MonoBehaviour
 {
+    
 
     private void OnCollisionEnter(Collision other)
     {
@@ -24,13 +26,20 @@ public class Colission : MonoBehaviour
             case "Finish":
                 Debug.Log("Kurwa....uda³o siê");
                 break;
-                default:
+            default:
                 Debug.Log("Zjeba³eœ....sorry");
+                ReloadeScene();
                 break;
 
 
 
         }
         
+    }
+
+    private static void ReloadeScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

@@ -714,6 +714,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: sideThrust
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 1668905933, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
       propertyPath: Loop
       value: 0

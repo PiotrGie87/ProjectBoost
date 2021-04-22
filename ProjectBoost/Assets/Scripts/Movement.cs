@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     AudioSource audio;
     [SerializeField] float mainThrust = 0f;
     [SerializeField] float turningSpeed = 0f;
+    [SerializeField] float sideThrust = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +23,14 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        LeftThrust();
+        RightThrust();
     }
 
     void ProcessThrust()
     {
         
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.W))
         {
             
             rb.AddRelativeForce(Vector3.up* mainThrust * Time.deltaTime);
@@ -46,6 +49,26 @@ public class Movement : MonoBehaviour
         
         
 
+    }
+
+    void LeftThrust()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rb.AddRelativeForce(Vector3.left * sideThrust * Time.deltaTime);
+
+        }
+        
+    }
+
+    void RightThrust()
+    {
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddRelativeForce(Vector3.right * sideThrust * Time.deltaTime);
+        }
+        
     }
 
     void ProcessRotation()
