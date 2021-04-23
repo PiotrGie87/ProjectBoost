@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 0f;
     [SerializeField] float turningSpeed = 0f;
     [SerializeField] float sideThrust = 0f;
+    [SerializeField] AudioClip thrust;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class Movement : MonoBehaviour
 
             if (!audio.isPlaying)
             {
-                audio.Play();
+                audio.PlayOneShot(thrust);
             }
             
         }
@@ -57,6 +59,7 @@ public class Movement : MonoBehaviour
         {
             rb.AddRelativeForce(Vector3.left * sideThrust * Time.deltaTime);
 
+            
         }
         
     }
@@ -76,6 +79,8 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             ApplyRotation(turningSpeed);
+
+            
         }
         else if (Input.GetKey(KeyCode.D))
         {

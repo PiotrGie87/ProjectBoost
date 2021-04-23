@@ -574,6 +574,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 960969136, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: crash
+      value: 
+      objectReference: {fileID: 8300000, guid: 91f866870c892e24aa03271166650184, type: 3}
+    - target: {fileID: 960969136, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: obstacleHit
+      value: 
+      objectReference: {fileID: 8300000, guid: 65701c511077f4343ae43f7c21d5721b, type: 3}
+    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: thrust
+      value: 
+      objectReference: {fileID: 8300000, guid: a89aea740cf350446b3bd33d339bd6f4, type: 3}
+    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: leftJet
+      value: 
+      objectReference: {fileID: 8300000, guid: c5920725f6fa0974a83541f1cce7a462, type: 3}
+    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: rightJet
+      value: 
+      objectReference: {fileID: 8300000, guid: c5920725f6fa0974a83541f1cce7a462, type: 3}
+    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: turningThrust
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668905933, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2552817532174414419, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
       propertyPath: m_RootOrder
       value: 5

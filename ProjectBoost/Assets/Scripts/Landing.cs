@@ -17,7 +17,7 @@ public class Landing : MonoBehaviour
 
         }
 
-        LoadNextLevel();
+        Invoke("LoadNextLevel", 1f);
 
     }
 
