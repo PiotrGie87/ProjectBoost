@@ -25,7 +25,9 @@ public class Colission : MonoBehaviour
             case "Obstacle":
                 Debug.Log("Wjeba³es siê na przeszkodê");
                 audioS = GetComponent<AudioSource>();
-                audioS.PlayOneShot(obstacleHit);
+               
+                    audioS.PlayOneShot(obstacleHit);
+             
                 break;
 
             case "Fuel":
