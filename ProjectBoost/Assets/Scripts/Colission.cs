@@ -9,9 +9,14 @@ public class Colission : MonoBehaviour
 
     AudioSource audioS;
 
+    bool isTransitioning = false;
+
     private void OnCollisionEnter(Collision other)
     {
-        
+        if (isTransitioning)
+        {
+            return;
+        }
 
         string whichTag = other.gameObject.tag;
 
@@ -48,12 +53,16 @@ public class Colission : MonoBehaviour
 
     void StartCrashSequence()
     {
+        isTransitioning = true;
+        
         GetComponent<Movement>().enabled = false;
         audioS = GetComponent<AudioSource>();
+        audioS.Stop();
         audioS.PlayOneShot(crash);
+        
 
         Rigidbody rb = GetComponent<Rigidbody>();
-        //rb.freezeRotation = true;
+        
         rb.constraints = RigidbodyConstraints.FreezeAll;
 
 

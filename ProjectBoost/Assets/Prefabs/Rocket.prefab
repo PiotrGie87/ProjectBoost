@@ -130,6 +130,7 @@ MonoBehaviour:
   mainThrust: 1000
   turningSpeed: 80
   sideThrust: 600
+  thrust: {fileID: 8300000, guid: a89aea740cf350446b3bd33d339bd6f4, type: 3}
 --- !u!82 &1668905933
 AudioSource:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a89aea740cf350446b3bd33d339bd6f4, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -238,3 +239,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b866e4b8b33a4844a6becd30d18864e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crash: {fileID: 8300000, guid: 91f866870c892e24aa03271166650184, type: 3}
+  obstacleHit: {fileID: 8300000, guid: 65701c511077f4343ae43f7c21d5721b, type: 3}
