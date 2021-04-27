@@ -123,16 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &364710441 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1154270971408406155, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-  m_PrefabInstance: {fileID: 7347253120362712611}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &369683298 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3805630816457291282, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-  m_PrefabInstance: {fileID: 7347253120362712611}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,14 +574,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-      propertyPath: leftSidethrustParticle
-      value: 
-      objectReference: {fileID: 369683298}
-    - target: {fileID: 1668905931, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
-      propertyPath: rightSidethrustParticle
-      value: 
-      objectReference: {fileID: 364710441}
     - target: {fileID: 2552817532174414419, guid: 64fa070188c54994fbe7ec516e30d992, type: 3}
       propertyPath: m_RootOrder
       value: 5
