@@ -7,9 +7,43 @@ public class Colission : MonoBehaviour
     [SerializeField] AudioClip crash;
     [SerializeField] AudioClip obstacleHit;
 
+    [SerializeField] ParticleSystem crashparticle;
+    
+
     AudioSource audioS;
 
     bool isTransitioning = false;
+
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        OnOffCollision();
+
+    }
+
+    private void OnOffCollision()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (isTransitioning)
+            {
+                isTransitioning = false;
+                Debug.Log("Collisions turned on");
+            }
+            else
+            {
+                isTransitioning = true;
+                Debug.Log("Collisions turn off");
+            }
+
+
+        }
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -61,6 +95,8 @@ public class Colission : MonoBehaviour
         audioS = GetComponent<AudioSource>();
         audioS.Stop();
         audioS.PlayOneShot(crash);
+
+        crashparticle.Play();
         
 
         Rigidbody rb = GetComponent<Rigidbody>();

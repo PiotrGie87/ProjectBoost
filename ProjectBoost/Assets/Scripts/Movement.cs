@@ -10,7 +10,12 @@ public class Movement :MonoBehaviour
     [SerializeField] float turningSpeed = 0f;
     [SerializeField] float sideThrust = 0f;
     [SerializeField] AudioClip thrust;
-    
+
+    [SerializeField] ParticleSystem thrustParticle;
+    [SerializeField] ParticleSystem leftSidethrustParticle;
+    [SerializeField] ParticleSystem rightSidethrustParticle;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,32 +39,27 @@ public class Movement :MonoBehaviour
         
         if (Input.GetKey(KeyCode.W))
         {
-            
-            rb.AddRelativeForce(Vector3.up* mainThrust * Time.deltaTime);
+            StartThrusting();
 
-            if (!audio.isPlaying)
-            {
-                audio.PlayOneShot(thrust);
-            }
-            
         }
         else
         {
-            audio.Stop();
+            StopThrusting();
         }
 
-        
-        
 
     }
 
+ 
     void LeftThrust()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rb.AddRelativeForce(Vector3.left * sideThrust * Time.deltaTime);
-
-            
+            StartLeftThrusting();
+        }
+        else
+        {
+            rightSidethrustParticle.Stop();
         }
         
     }
@@ -69,7 +69,14 @@ public class Movement :MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.right * sideThrust * Time.deltaTime);
+
+            StartRightThrusting();
+            
+
+        }
+        else
+        {
+            leftSidethrustParticle.Stop();
         }
         
     }
@@ -87,6 +94,57 @@ public class Movement :MonoBehaviour
             ApplyRotation(-turningSpeed);
         }
     }
+
+    private void StopThrusting()
+    {
+        audio.Stop();
+        thrustParticle.Stop();
+    }
+
+    private void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+
+        if (!thrustParticle.isPlaying)
+        {
+            thrustParticle.Play();
+        }
+
+        if (!audio.isPlaying)
+        {
+            audio.PlayOneShot(thrust);
+        }
+    }
+
+    private void StartRightThrusting()
+    {
+        rb.AddRelativeForce(Vector3.right * sideThrust * Time.deltaTime);
+
+        if (!leftSidethrustParticle.isPlaying)
+        {
+            leftSidethrustParticle.Play();
+        }
+        else
+        {
+            return;
+        }
+    }
+
+
+    private void StartLeftThrusting()
+    {
+        rb.AddRelativeForce(Vector3.left * sideThrust * Time.deltaTime);
+
+        if (!rightSidethrustParticle.isPlaying)
+        {
+            rightSidethrustParticle.Play();
+        }
+        else
+        {
+            return;
+        }
+    }
+
 
     void ApplyRotation(float rotationThisFrame)
     {
